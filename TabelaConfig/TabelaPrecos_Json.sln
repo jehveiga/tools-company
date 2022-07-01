@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabelaJson", "TabelaConfig\TabelaJson.csproj", "{BDCDFD54-CC0E-43CE-910D-11CAF180CCC5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BDCDFD54-CC0E-43CE-910D-11CAF180CCC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDCDFD54-CC0E-43CE-910D-11CAF180CCC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDCDFD54-CC0E-43CE-910D-11CAF180CCC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDCDFD54-CC0E-43CE-910D-11CAF180CCC5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B5128E2-7779-4DAB-A5BE-49D068A7BDE0}
+	EndGlobalSection
+EndGlobal
