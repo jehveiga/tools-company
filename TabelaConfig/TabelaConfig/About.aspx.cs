@@ -1,11 +1,9 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -56,13 +54,6 @@ namespace TabelaConfig
             {
                 Debug.WriteLine(item.Data + ":" + item.Preco);
             }
-
-
-            // Carregando o DataGridView
-            DataTable dataTable = new DataTable();
-            DataRow dataRow = null;
-            dataTable.Columns.Add("Data");
-            dataTable.Columns.Add("Preço");
 
             // Carregando tabela criada
             for (int i = 0; i < Lista_acoes.Count; i++)
