@@ -1,0 +1,57 @@
+@model IEnumerable<EnderecoModel>
+@{
+    var cliente = ViewBag.Cliente as ClienteModel;
+    ViewBag.Subtitulo = $"Endereços do Cliente <b>{cliente.Nome}</b>";
+}
+
+<header class="d-flex justify-content-between align-items-center">
+    <div>
+        <h1 class="text-primary">@Html.Raw(ViewBag.Subtitulo)</h1>
+    </div>
+    <div>
+        <a asp-action="Cadastrar" asp-route-cid="@cliente.IdUsuario" class="btn btn-primary">Novo Endereço</a>
+    </div>
+</header>
+<hr>
+
+<partial name="_Mensagem"></partial>
+
+@if (Model.Count() > 0)
+{
+    <table class="table table-striped tabela-enderecos">
+        <thead>
+            <tr>
+                <th>Logradouro</th>
+                <th>Nº</th>
+                <th>Complemento</th>
+                <th>Bairro</th>
+                <th>Cidade</th>
+                <th>UF</th>
+                <th>CEP</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var endereco in Model)
+            {
+                <tr>
+                    <td>@endereco.Logradouro</td>
+                    <td>@endereco.Numero</td>
+                    <td>@endereco.Complemento</td>
+                    <td>@endereco.Bairro</td>
+                    <td>@endereco.Cidade</td>
+                    <td>@endereco.Estado</td>
+                    <td>@endereco.CEP</td>
+                    <td>
+                        <a asp-action="Cadastrar" asp-route-cid="@cliente.IdUsuario" asp-route-eid="@endereco.IdEndereco" class="btn btn-sm btn-secondary">Alterar</a>
+                        <a asp-action="Excluir" asp-route-cid="@cliente.IdUsuario" asp-route-eid="@endereco.IdEndereco" class="btn btn-sm btn-danger">Excluir</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Não há nenhum endereço cadastrado para este cliente.</p>
+}
