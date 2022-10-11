@@ -1,0 +1,57 @@
+* Use a biblioteca TableExport para exportar a tabela HTML para o arquivo excel em JavaScript
+
+A biblioteca TableExport pode exportar tabelas HTML para arquivos XLSX, XLS, CSV ou de texto. Esta biblioteca é simples de usar e oferece uma ampla gama de propriedades para personalizar o arquivo final.
+
+Verifique o código abaixo.
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/TableExport/5.2.0/js/tableexport.min.js" integrity="sha512-XmZS54be9JGMZjf+zk61JZaLZyjTRgs41JLSmx5QlIP5F+sSGIyzD2eJyxD4K6kGGr7AsVhaitzZ2WTfzpsQzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+TableExport(document.getElementsByTagName("table"), {
+    filename: 'excelfile',            
+    sheetname: "sheet1"                     
+});
+</script>
+
+No exemplo acima, acessamos a tabela HTML necessária usando a função getElementsByTagName(). Usamos as propriedades filename e sheetname para definir os nomes do arquivo final e da folha.
+
+Observe que, para incluir a biblioteca TableExport, adicionamos a fonte da biblioteca na tag script no código HTML.
+
+-------------------------------------------------------------------------------------------------------------------------
+
+* Use a biblioteca TabletoExcel para exportar tabela HTML para Excel em JavaScript
+
+A biblioteca TableToExcel pode ser usada para exportar uma tabela HTML para um arquivo excel. Usaremos o método convert() para fazer a conversão necessária.
+
+Veja o código abaixo.
+
+<button id="btnExport" onclick="exportReportToExcel(this)">Export HTML Table</button>
+
+<script type="text/javascript">
+  function exportReportToExcel() {
+    let table = document.getElementsByID("table");
+    TableToExcel.convert(table[0], { 
+      name: `file.xlsx`,
+      sheet: {
+        name: 'Sheet 1'
+      }
+    });
+  }
+</script>
+
+No exemplo acima, obtemos o elemento de tabela necessário usando a função getElementsbyID(). Exportamos isso para um arquivo excel. O nome do arquivo e a planilha também foram fornecidos usando as propriedades name e sheet.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+* Use a biblioteca jQuery para exportar a tabela HTML para o arquivo excel em JavaScript
+
+Usaremos o plugin table2excel para exportar os dados da tabela HTML para uma planilha Excel. É um plugin jQuery leve.
+
+Verifique o código abaixo.
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js", type="text/javascript">
+  function Export() {
+    $("#table").table2excel({
+      filename: "file.xls"
+    });
+  }
+</script>
+
+Acessamos a tabela necessária usando o $(table). O construtor table2excel converteu isso no arquivo necessário.
